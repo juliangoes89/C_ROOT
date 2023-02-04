@@ -24,6 +24,7 @@ public class BackgroundScrollController : MonoBehaviour {
 		//availableObjects.Enqueue (BGObjects [2]);
 		availableObjects.Enqueue(BGScrollObjects[0]);
 		availableObjects.Enqueue(BGScrollObjects[1]);
+		availableObjects.Enqueue(BGScrollObjects[2]);
 
 		// Call the MoveObjectDown function every 20 seconds.
 		InvokeRepeating ("MoveObjectUp", 0, 10f);	

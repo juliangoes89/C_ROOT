@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 				playerShip.GetComponent<PlayerControl>().Init();
 				// Start the enemy spawner.
 				//enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
-				enemyHorizontalSpawner.GetComponent<EnemyHorizontalSpawner>().ScheduleEnemySpawner();
+				//enemyHorizontalSpawner.GetComponent<EnemyHorizontalSpawner>().ScheduleEnemySpawner();
 				// Start the hazard spawner.
 				hazardSpawner.GetComponent<HazardSpawner>().ScheduleHazardSpawner();
 				// Start the power up spawner.

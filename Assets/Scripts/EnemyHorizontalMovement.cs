@@ -89,7 +89,7 @@ public class EnemyHorizontalMovement : MonoBehaviour {
 		// Move toward the target.
 		Vector3 pos = transform.position;
 
-		Vector3 velocity = new Vector3(1 * moveSpeed * Time.deltaTime,0 , 0);
+		Vector3 velocity = new Vector3(1 * moveSpeed * Time.deltaTime, 0,0);
 		pos += transform.rotation * velocity;
 
 		transform.position = pos;

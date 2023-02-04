@@ -16,7 +16,7 @@ public class EnemyHorizontalSpawner : MonoBehaviour {
 		
 		// Create an enemy as a new gameObject from the available gameObjects in the array.
 		GameObject anEnemy = Instantiate (enemyShips [UnityEngine.Random.Range (0, enemyShips.Length)]);
-		anEnemy.transform.position = new Vector2 (min.x, min.y+0.4f);
+		anEnemy.transform.position = new Vector2 (min.x+6f, min.y+0.4f);
 		
 		// Schedule when to spawn the next enemy.
 		ScheduleNextEnemySpawn ();

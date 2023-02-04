@@ -27,9 +27,12 @@ public class BackgroundScrollController : MonoBehaviour {
 		availableObjects.Enqueue(BGScrollObjects[2]);
 
 		// Call the MoveObjectDown function every 20 seconds.
-		InvokeRepeating ("MoveObjectUp", 0, 10f);	
+		//InvokeRepeating ("MoveObjectUp", 0, 10f);	
 	}
 
+	void scroll() {
+		InvokeRepeating("MoveObjectUp", 0, 10f);
+	}
 	// Function to dequeue an object, and set its isMoving flag to true
 	// so that the object will start to scroll down the screen.
 	void MoveObjectDown()

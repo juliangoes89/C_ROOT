@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 				// Hide the game over text.
 				GameOver.SetActive(false);
 				// Hide the main HUD text.
-				hud.SetActive(false);
+				//hud.SetActive(false);
 				// Display the game title.
 				//GameTitle.SetActive(true);
 				// Show the 'Play' button.
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 				break;
 			case GameManagerState.Gameplay:
 				// Hide the cursor.
-				Cursor.visible = false;
+				//Cursor.visible = false;
 				// Hide the game titles.
 				//GameTitle.SetActive(false);
 				// Hide the "Play" button during gameplay.
@@ -73,11 +73,12 @@ public class GameManager : MonoBehaviour
 				// Set the player ship to be visible during gameplay.
 				playerShip.GetComponent<PlayerControl>().Init();
 				// Start the enemy spawner.
-				enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
+				//enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
+				enemyHorizontalSpawner.GetComponent<EnemyHorizontalSpawner>().ScheduleEnemySpawner();
 				// Start the hazard spawner.
 				hazardSpawner.GetComponent<HazardSpawner>().ScheduleHazardSpawner();
 				// Start the power up spawner.
-				powerUpSpawner.GetComponent<PowerUpSpawner>().SchedulePowerUpSpawner();
+				//powerUpSpawner.GetComponent<PowerUpSpawner>().SchedulePowerUpSpawner();
 				break;
 			case GameManagerState.GameOver:
 				// Stop the timer.

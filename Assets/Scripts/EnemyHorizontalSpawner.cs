@@ -5,7 +5,7 @@ public class EnemyHorizontalSpawner : MonoBehaviour {
 	
 	public GameObject[] enemyShips;
 
-	float maxSpawnRateInSeconds = 5f;
+	float maxSpawnRateInSeconds = 360f;
 	
 	void SpawnRandomEnemy()
 	{
@@ -28,7 +28,7 @@ public class EnemyHorizontalSpawner : MonoBehaviour {
 
 		if (maxSpawnRateInSeconds > 1f) {
 			//Pick a random number between 1 and the max spawn rate.
-			spawnInSeconds = Random.Range (1f, maxSpawnRateInSeconds);
+			spawnInSeconds = Random.Range (10f, maxSpawnRateInSeconds);
 		} else
 			spawnInSeconds = 1f;
 		// Spawn an enemy according the the timer.

@@ -16,7 +16,7 @@ public class HazardSpawner : MonoBehaviour {
 		
 		// Create a hazard as a new gameObject from the available gameObjects in the array.
 		GameObject aHazard = Instantiate (hazards [UnityEngine.Random.Range (0, hazards.Length)]);
-		aHazard.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
+		aHazard.transform.position = new Vector2 (Random.Range (min.x, max.x), min.y);
 		
 		// Schedule when to spawn the next hazard.
 		ScheduleNextHazardSpawn ();

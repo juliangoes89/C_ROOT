@@ -82,11 +82,11 @@ public class PlayerControl : MonoBehaviour {
 			);
 		// This will limit the firing rate of the player, and fire the weapon whenever the screen is touched.
 		if (fireRate == 0f) {
-			if (Input.GetMouseButton (0)) {
+			if (Input.GetKey("space")) {
 				FireWeapon ();
 			}
 		} else {
-			if (Input.GetMouseButton (0) && Time.time > timeToFire) {
+			if (Input.GetKey("space") && Time.time > timeToFire) {
 				timeToFire = Time.time + 1f / fireRate;
 				FireWeapon ();
 			}

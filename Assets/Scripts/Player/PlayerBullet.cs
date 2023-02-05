@@ -22,6 +22,7 @@ public class PlayerBullet : MonoBehaviour {
 		// If the bullet leaves the screen area, destroy it.
 		if (transform.position.y > max.y) 
 		{
+			Debug.Log("Bullet_free");
 			Destroy(gameObject);
 		}
 	}

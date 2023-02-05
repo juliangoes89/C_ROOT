@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour
 				// Display the game over text.
 				GameOver.SetActive(true);
 				// Change the game state to 'Opening' after 5 seconds.
-				Invoke("RestartGamePlay", 5f);
+				//Invoke("RestartGamePlay", 5f);
+				SceneManager.LoadScene("EscenaGameOver");
 				break;
 		}
 	}

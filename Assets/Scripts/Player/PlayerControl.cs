@@ -20,6 +20,7 @@ public class PlayerControl : MonoBehaviour {
 	public Transform firePoint05;
 
 	public float hazardDamage= 50f;
+	public float enemyDamage = 5f;
 
 	int weaponID = 1; // This is the default weapon ID.
 	private float fireRate = 6f; // You can set a default firing rate here or per case in the weaponID switch.
@@ -123,7 +124,7 @@ public class PlayerControl : MonoBehaviour {
 		if ((col.tag == "EnemyShip") || (col.tag == "EnemyBullet")) 
 		{
 			// This is the current amount you get hurt when hit by an enemy ship or bullet.
-			GetComponent<PlayerHealth>().TakeDamage(10f);
+			GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
 
 			if(GetComponent<PlayerHealth>().curHealth > 0) // If the player still has life remaining then play the shield animation.
 			{

@@ -59,7 +59,16 @@ public class PlayerControl : MonoBehaviour {
 			//pos.z = transform.position.z - Camera.main.transform.position.z;
 			//pos = Camera.main.ScreenToWorldPoint(pos);
 			//transform.position = Vector3.Lerp(transform.position, pos, moveSpeed * Time.deltaTime);
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(Input.GetAxis("Horizontal") * 5.2f, 0) - GetComponent<Rigidbody2D>().velocity * .8f);
+			if (Input.GetAxis("Horizontal") != 0) {
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(Input.GetAxis("Horizontal") * 5.2f, 0) - GetComponent<Rigidbody2D>().velocity * .8f);
+			}
+			if (Input.GetKeyDown(KeyCode.D)) {
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(5.2f, 0) - GetComponent<Rigidbody2D>().velocity * .8f);
+			}
+			if (Input.GetKeyDown(KeyCode.A)) {
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(-5.2f, 0) - GetComponent<Rigidbody2D>().velocity * .8f);
+			}
+
 		}
 #else
 		// These are the touchScreen controls.
@@ -85,11 +94,11 @@ public class PlayerControl : MonoBehaviour {
 			);
 		// This will limit the firing rate of the player, and fire the weapon whenever the screen is touched.
 		if (fireRate == 0f) {
-			if (Input.GetKey("space")) {
+			if (Input.GetKey("space") || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl)) {
 				FireWeapon ();
 			}
 		} else {
-			if (Input.GetKey("space") && Time.time > timeToFire) {
+			if ((Input.GetKey("space") || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl)) && Time.time > timeToFire) {
 				timeToFire = Time.time + 1f / fireRate;
 				FireWeapon ();
 			}

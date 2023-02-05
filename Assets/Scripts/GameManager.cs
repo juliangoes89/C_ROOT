@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 				// Start the hazard spawner.
 				hazardSpawner.GetComponent<HazardSpawner>().ScheduleHazardSpawner();
 				// Start the power up spawner.
-				powerUpSpawner.GetComponent<PowerUpSpawner>().SchedulePowerUpSpawner();
+				//powerUpSpawner.GetComponent<PowerUpSpawner>().SchedulePowerUpSpawner();
 
 				break;
 			case GameManagerState.Gameplay:

@@ -19,6 +19,8 @@ public class PlayerControl : MonoBehaviour {
 	public Transform firePoint04;
 	public Transform firePoint05;
 
+	public float hazardDamage= 50f;
+
 	int weaponID = 1; // This is the default weapon ID.
 	private float fireRate = 6f; // You can set a default firing rate here or per case in the weaponID switch.
 	float timeToFire = 0f;
@@ -141,14 +143,14 @@ public class PlayerControl : MonoBehaviour {
 		else if ((col.tag == "WorldHazard"))
 		{
 			// Currently hitting a world hazard will reduce your health to 0 and destroy you.
-			GetComponent<PlayerHealth>().TakeDamage(100f);
+			GetComponent<PlayerHealth>().TakeDamage(hazardDamage);
 
 			// Explode if the player is out of health.
-			PlayExplosion();
+			//PlayExplosion();
 			// Change the gamestate to 'Game Over'.
-			GameManagerGO.GetComponent<GameManager>().SetGameManagerState(GameManager.GameManagerState.GameOver);
+			//GameManagerGO.GetComponent<GameManager>().SetGameManagerState(GameManager.GameManagerState.GameOver);
 			// Hide the player ship.
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
 		}
 		// COMBAT EXAMPLE: This is a combat power up example which switches the players weapon type, you could customise this in different ways.
 		else if ((col.tag == "BluePowerUp"))

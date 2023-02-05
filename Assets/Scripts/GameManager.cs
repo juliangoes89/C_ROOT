@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 				// Set the player ship to be visible during gameplay.
 				playerShip.GetComponent<PlayerControl>().Init();
 				// Start the enemy spawner.
-				//enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
+				enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
 				enemyHorizontalSpawner.GetComponent<EnemyHorizontalSpawner>().ScheduleEnemySpawner();
 				// Start the hazard spawner.
 				hazardSpawner.GetComponent<HazardSpawner>().ScheduleHazardSpawner();

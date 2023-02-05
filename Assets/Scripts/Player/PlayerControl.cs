@@ -71,11 +71,11 @@ public class PlayerControl : MonoBehaviour {
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0,0));
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1,1));
 		
-		max.x = max.x - 0.225f; 
-		min.x = min.x + 0.225f; 
+		max.x = max.x - 0.70f; 
+		min.x = min.x + 0.70f; 
 		
-		max.y = max.y - 0.285f; 
-		min.y = min.y + 0.285f; 
+		max.y = max.y - 0.70f; 
+		min.y = min.y + 0.70f; 
 		// This makes sure our player never leaves the screen area.
 		GetComponent<Rigidbody2D>().position = new Vector2 
 			(

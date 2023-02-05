@@ -29,7 +29,7 @@ public class GameScore : MonoBehaviour {
 	}
 
 	void checkifScoreIsOver() {
-		if (score > 13000) {
+		if (score > 10000) {
 			SceneManager.LoadScene(3);
 		}
 	}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameScore : MonoBehaviour {
 
@@ -24,5 +25,12 @@ public class GameScore : MonoBehaviour {
 	void UpdateScoreTextUI () {
 		string scoreStr = string.Format ("{0:0000000}", score);
 		scoreTextUI.text = scoreStr;
+		checkifScoreIsOver();
+	}
+
+	void checkifScoreIsOver() {
+		if (score > 13000) {
+			SceneManager.LoadScene(3);
+		}
 	}
 }

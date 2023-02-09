@@ -9,7 +9,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    
+
+    public void PlayGameMobile()
+    {
+        SceneManager.LoadScene(6);
+    }
+
     public void Quitame()
     {
         Debug.Log("Quit action");

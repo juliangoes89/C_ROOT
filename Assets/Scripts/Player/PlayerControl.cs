@@ -105,7 +105,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 	}
 
-	void FireWeapon ()
+	public void FireWeapon ()
 	{
 		// Play the laser sound effect.
 		laserSound.Play();

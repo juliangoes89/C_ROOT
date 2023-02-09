@@ -154,7 +154,19 @@ public class PlayerControl : MonoBehaviour {
 		{
 			// Currently hitting a world hazard will reduce your health to 0 and destroy you.
 			GetComponent<PlayerHealth>().TakeDamage(hazardDamage);
-
+			if (GetComponent<PlayerHealth>().curHealth > 0) // If the player still has life remaining then play the shield animation.
+			{
+				PlayShields();
+			}
+			else if (GetComponent<PlayerHealth>().curHealth <= 0) // If the player is out of life, destroy player.
+			{
+				// Explode if the player is out of health.
+				PlayExplosion();
+				// Change the gamestate to 'Game Over'.
+				GameManagerGO.GetComponent<GameManager>().SetGameManagerState(GameManager.GameManagerState.GameOver);
+				// Hide the player ship.
+				gameObject.SetActive(false);
+			}
 			// Explode if the player is out of health.
 			//PlayExplosion();
 			// Change the gamestate to 'Game Over'.
